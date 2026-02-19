@@ -9,7 +9,7 @@ This project simulates a monitoring system scenario where:
 - If an Incident is resolved (closed), the related Event must be closed as well.
 - If the Incident is still open, no action is performed.
 
-This script automates that logic using Bash, AWK, and SED.
+The script automates this logic using Bash, AWK, and SED.
 
 ---
 
@@ -23,7 +23,6 @@ ITI-Bash/
 ├── events_status
 └── README.md
 
-
 ---
 
 ## 📄 Files Description
@@ -32,9 +31,8 @@ ITI-Bash/
 Contains incident numbers and their status.
 
 Example:
-INC0000401356 closed
-INC0000401357 opened
-
+INC0000401356 closed  
+INC0000401357 opened  
 
 ---
 
@@ -42,8 +40,7 @@ INC0000401357 opened
 Maps incident numbers to event IDs.
 
 Example:
-INC0000401356 6192fd9a-9b03-71ec-01b9-0a4e23470001
-
+INC0000401356 6192fd9a-9b03-71ec-01b9-0a4e23470001  
 
 ---
 
@@ -51,35 +48,42 @@ INC0000401356 6192fd9a-9b03-71ec-01b9-0a4e23470001
 Contains event IDs and their current state.
 
 Example:
-6192fd9a-9b03-71ec-01b9-0a4e23470001 opened
-
+6192fd9a-9b03-71ec-01b9-0a4e23470001 opened  
 
 ---
 
 ## ⚙️ How It Works
 
 1. The script asks the user to enter an Incident number.
-2. It verifies that the incident exists.
-3. It checks the ticket status.
-4. If the ticket is **closed**:
-   - The related event is located.
-   - If the event is opened → it will be updated to closed.
-5. If the ticket is **opened**:
+2. It validates if the incident exists in the ticket_status file.
+3. It checks the incident state.
+4. If the incident is CLOSED:
+   - The related event is retrieved.
+   - If the event is OPENED → it will be updated to CLOSED.
+5. If the incident is OPEN:
    - No changes are applied.
 
 ---
 
 ## 🚀 How to Run
 
-```bash
+Make the script executable:
+
 chmod +x script.sh
+
+Run the script:
+
 ./script.sh
 
-Then enter an incident number like:
+Enter an incident number like:
+
 INC0000401356
 
-🛠 Technologies Used
-Bash
-AWK
-SED
-Linux Shell Scripting
+---
+
+## 🛠 Technologies Used
+
+- Bash
+- AWK
+- SED
+- Linux Shell Scripting
