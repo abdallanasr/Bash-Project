@@ -11,19 +11,18 @@ This project simulates a monitoring system scenario where:
 
 The script automates this logic using Bash, AWK, and SED.
 
----
-
 ## 🗂 Project Structure
 
+```
 ITI-Bash/
 │
 ├── script.sh
 ├── ticket_status
-├── events_tickets
-├── events_status
+├── events_tickets.txt
+├── events_status.txt
 └── README.md
+```
 
----
 
 ## 📄 Files Description
 
